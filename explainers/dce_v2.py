@@ -23,8 +23,10 @@ class  DCEWithConstraints:
         n_proj=50,
         delta=0.1,
         costs_vector=None,
-        constraint_manager=None     # 保存 ConstraintManager 实例（可选参数）：
+        constraint_manager=None     
     ):
+        self._first_iter_flag = True  
+
         self.X = df_X.values
         # Find indices of explain_columns in df_X
         self.explain_indices = [df_X.columns.get_loc(col) for col in explain_columns]
@@ -90,11 +92,10 @@ class  DCEWithConstraints:
 
         self.penalty_list = []
 
-# ======0920新增=========================================================       
-        # 如果用户传入 constraint_manager，就在优化时叠加约束惩罚；
-        # 如果传入 None，就只跑原始 DCE（不加任何约束）。 
+        # If user passes constraint_manager, add constraint penalty during optimization;
+        # If None is passed, run original DCE (without any constraints).
         self.constraint_manager = constraint_manager
-# ======= # 初始化最优惩罚值，用于后续比较更新 best 解======================
+# ======= # Initialize optimal penalty value for subsequent comparison to update best solution ======================
         self.best_penalty = float("inf")
     def _update_Q(self, mu_list, nu, eta):
         n, m = (
@@ -135,61 +136,27 @@ class  DCEWithConstraints:
         )
 
                 
-##920改：
-        self.term2 = torch.zeros(1, device=self.device)   # 初始化为0的tensor
+        self.term2 = torch.zeros(1, device=self.device)   
         for i in range(n):
             for j in range(m):
                 self.term2 = self.term2 + nu[i, j] * (self.model(self.X[i]) - self.y_prime[j]) ** 2
 
         
-# # ===================== 新增部分（基于原始DCE框架的扩展） =====================
-# # 这里我们在老师的原始目标函数 Q 基础上，额外引入约束惩罚项
-# # constraint_manager 会整合所有定义好的约束（Mean/STD/FSD/SSD...），
-# # 返回一个 torch.Tensor 类型的 penalty，用于保持梯度可回传。
-# # 最终目标函数 Q = (1-eta)*SWD + eta*WD + Σ λ_k * L_constraint,k
-#         constraint_loss = self.constraint_manager.penalty(self.X)  # torch.Tensor
-#         self.Q = (1 - eta) * self.term1 + eta * self.term2+ constraint_loss
-# # ========================================================================
-
-        # # ===================== 0920新增部分（融合约束梯度） =====================
-        # # 如果设置了 constraint_manager，就在这里回传约束的梯度，
-        # # 得到 autograd 自动计算的 grad_auto；
-        # # 否则说明没有约束，此时 grad_auto 置为 0（不影响主流程）。
-        # if self.constraint_manager is not None:
-        #     constraint_loss = self.constraint_manager.penalty(self.X)
-        #     self.optimizer.zero_grad()
-        #     constraint_loss.backward(retain_graph=True)
-        #     grad_auto = self.X.grad.clone().detach()
-        # else:
-        #     grad_auto = torch.zeros_like(self.X)
-        # # =====================================================================
-            
-        # ========================0920新增-修改=============================
-        # 🚩 之前这里直接调用 constraint_loss.backward() 是不对的：
-        # - _update_Q 的职责只是计算目标函数 Q 的数值，不应该在这里回传梯度，
-        #   否则会和 _update_X_grads 里的优化步骤冲突，导致梯度被覆盖或重复累积。
-        # - 正确做法是在 _update_Q 里只把约束项 penalty 加进 Q；
-        #   真正的 backward() 应该放在 _update_X_grads 里执行。
-        #
-        # 因此修改为：
-        # - 如果有 constraint_manager，就取出 penalty；
-        # - 如果没有，就用 0 占位；
-        # - 然后和 term1、term2 一起组成最终的 Q。
-        #
-        # 最终目标函数：
-        #     Q = (1 - eta) * SWD + eta * WD + Σ λ_k * L_constraint,k
+        constraint_loss = torch.tensor(0.0, device=self.device)
         if self.constraint_manager is not None:
-            # constraint_loss = self.constraint_manager.penalty(self.X)
-            constraint_loss = self.constraint_manager.penalty(
-            X_fact=self.X_prime,  # fact
-            X_cf=self.X,          # cf
-            mu_list=mu_list       # SWD transport plan
-        )
-        else:
-            constraint_loss = torch.tensor(0.0, device=self.device)
+            # Determine if it is the first iteration
+            if hasattr(self, '_first_iter_flag') and self._first_iter_flag:
+                # First iteration: force constraint loss to 0, skip calculation
+                self._first_iter_flag = False  # Mark end of first iteration, effective only once
+            else:
+                # Non-first iteration: calculate constraint loss normally
+                constraint_loss = self.constraint_manager.penalty(
+                    X_fact=self.X_prime,  # fact
+                    X_cf=self.X,          # cf
+                    mu_list=mu_list       # SWD transport plan
+                )
 
         self.Q = (1 - eta) * self.term1 + eta * self.term2 + constraint_loss
-        # =====================================================================
 
         
 
@@ -270,41 +237,35 @@ class  DCEWithConstraints:
 
         
 
-# ===================== 0920修改部分（基于原始DCE框架的扩展.检查梯度是否融合成功） =====================      
-        # ===== 3. 回传约束梯度 (autograd) =====
+# ===================== Extension based on original DCE framework. Check if gradients are fused successfully ======================      
+        # ===== 3. Backpropagate constraint gradients (autograd) =====
         constraint_loss = self.constraint_manager.penalty(
             X_fact=self.X_prime,
             X_cf=self.X,
             mu_list=mu_list
         )
         self.optimizer.zero_grad()      
-        # 反向传播计算约束损失（constraint_loss）的梯度        
+        # Backward pass to compute gradients of constraint_loss        
         constraint_loss.backward(retain_graph=True)
-        # 保存一份约束的梯度（由constraint_loss.backward()产生）
+        # Save constraint gradients (generated by constraint_loss.backward())
         grad_auto = self.X.grad.clone().detach()  
 
-        # ===== 4. 把手工梯度加进去 (不覆盖) =====
-        #创建一个与 self.X 相同形状的零张量，准备存放手动计算的梯度
+        # ===== 4. Add manual gradients (without overwriting) =====
+        # Create zero tensor with the same shape as self.X to store manual gradients
         grad_manual = torch.zeros_like(self.X)
-        #用手工计算的梯度（self.Qx_grads * tau）填充 grad_manual 的指定列
+        # Fill grad_manual with manually computed gradients (self.Qx_grads * tau) for specified columns
         grad_manual[:, self.explain_indices] = self.Qx_grads * tau
-        #将手动计算的梯度（grad_manual）加到自动计算的梯度（self.X.grad）上
+        # Add manual gradients (grad_manual) to automatic gradients (self.X.grad)
         self.X.grad[:, self.explain_indices] += self.Qx_grads * tau
-        #保存融合后的梯度（手动梯度和自动梯度的加和）
+        # Save fused gradients (sum of manual and automatic gradients)
         grad_fused = self.X.grad.clone().detach()
 
-# ===== Debug 打印（只跑前3轮就够验证） =====
+# ===== Debug print (only run first 3 iterations to verify) =====
         if hasattr(self, "_debug_step"):
             self._debug_step += 1
         else:
             self._debug_step = 0
 
-        # if self._debug_step < 3:  # 前3轮打印
-        #     print(f"[Iter {self._debug_step}] constraint_loss={constraint_loss.item():.4f}")
-        #     print(f"  Autograd grad (前5行):\n{grad_auto[:5]}")
-        #     print(f"  Manual grad (前5行):\n{grad_manual[:5]}")
-        #     print(f"  Fused grad   (前5行):\n{grad_fused[:5]}")
-        #     print(f"  差值 max={ (grad_fused - (grad_auto + grad_manual)).abs().max().item() }\n")
 # ===================== =====================    
 
 
@@ -328,13 +289,12 @@ class  DCEWithConstraints:
         self._update_Q(mu_list=self.swd.mu_list, nu=self.wd.nu, eta=eta)
         self.y = self.model(self.X)
 
-        # 🔎 打印调试信息
         # print(f"[DEBUG] self.Q type={type(self.Q)}, shape={getattr(self.Q, 'shape', None)}")
         # print(f"[DEBUG] past_Qs(before)={past_Qs}")
 
         # Check for convergence using moving average of past Q changes
         past_Qs.pop(0)
-        past_Qs.append(self.Q)   # 这里先不要 .item()，直接看原始情况
+        past_Qs.append(self.Q)  
 
         # print(f"[DEBUG] past_Qs(after)={[ (type(x), getattr(x,'shape',None)) for x in past_Qs ]}")
 
@@ -388,7 +348,7 @@ class  DCEWithConstraints:
         self.interval_left = l
         self.interval_right = r
         
-        # ===== 新增：存储每轮 term1、term2、penalty =====
+        # ===== New: Store term1, term2, penalty for each iteration =====
         self.term1_list = []
         self.term2_list = []
         self.penalty_list = []
@@ -460,34 +420,11 @@ class  DCEWithConstraints:
             else:
                 gap = (U_1 - self.Qu_upper) + (U_2 - self.Qv_upper)
 
-            # ====== 原始逻辑（按 gap 最小选取 best） ======
-            # if gap < self.best_gap:
-            #     self.best_gap = gap
-            #     self.best_X = self.X.clone().detach()
-            #     self.best_y = self.y.clone().detach()
-            #     self.found_feasible_solution = True
 
-            # # ====== 新逻辑（在满足 U1/U2 可行条件下，按 penalty 最小选取 best） ======
-            # if (U_1 - self.Qu_upper) >= 0 and (U_2 - self.Qv_upper) >= 0:
-            #     # 当前解满足上下界要求
-            #     with torch.no_grad():
-            #         penalty_val = self.constraint_manager.penalty(
-            #             X_fact=self.X_prime,
-            #             X_cf=self.X,
-            #             mu_list=self.swd.mu_list
-            #         ).item()
-
-            #     # 如果是第一个可行解，或者 penalty 更小，则更新 best
-            #     if (not self.found_feasible_solution) or (penalty_val < self.best_penalty):
-            #         self.best_penalty = penalty_val
-            #         self.best_X = self.X.clone().detach()
-            #         self.best_y = self.y.clone().detach()
-            #         self.best_iter = i   # ✅ 新增：保存是哪一轮
-            #         self.found_feasible_solution = True
                 
-# # ====== 0928改新逻辑（分约束满足/不满足两种情况） ======               
+# # ====== Two cases: constraint satisfied / not satisfied ======               
             if (U_1 - self.Qu_upper) >= 0 and (U_2 - self.Qv_upper) >= 0:
-                # 当前解满足 U1/U2 要求
+                # Current solution meets U1/U2 requirements
                 with torch.no_grad():
                     penalty_val = self.constraint_manager.penalty(
                         X_fact=self.X_prime,
@@ -497,7 +434,7 @@ class  DCEWithConstraints:
 
                 gap = (U_1 - self.Qu_upper) + (U_2 - self.Qv_upper)
 
-                # 🟢 情况 1：约束满足（penalty == 0），选 gap 最大
+                #  Case 1: Constraints satisfied (penalty == 0), select maximum gap
                 if penalty_val == 0:
                     if (not self.found_feasible_solution) or (penalty_val == 0 and gap > self.best_gap):
                         self.best_gap = gap
@@ -507,7 +444,7 @@ class  DCEWithConstraints:
                         self.best_penalty = 0.0
                         self.found_feasible_solution = True
 
-                # 🔶 情况 2：约束不满足，选 penalty 最小
+                #  Case 2: Constraints not satisfied, select minimum penalty
                 else:
                     if (not self.found_feasible_solution) or (penalty_val < self.best_penalty):
                         self.best_penalty = penalty_val
@@ -517,7 +454,7 @@ class  DCEWithConstraints:
                         self.found_feasible_solution = True
 
                 
-# =====0924为了适配FSD修改传参方法==================
+# ===== Adapt parameter passing method for FSD ===================
             
             if self.constraint_manager is not None:
                 with torch.no_grad():
@@ -529,7 +466,7 @@ class  DCEWithConstraints:
             else:
                 penalty_val = 0.0
 
-            # ===== 新增：保存数值到列表 =====
+            # ===== New: Save values to lists =====
             self.term1_list.append(self.term1.item())
             self.term2_list.append(self.term2.item())
             self.penalty_list.append(penalty_val)
@@ -608,8 +545,8 @@ class  DCEWithConstraints:
 
     def plot_optimization_trace(self, figsize=(10, 4)):
         """
-        画出每轮优化中的 term1 (SWD), term2 (WD), constraint penalty。
-        使用双 y 轴，去除 marker，保持图像简洁。
+        Plots term1 (SWD), term2 (WD), and constraint penalty during each optimization iteration.
+        Uses dual y-axis, removes markers for clean visualization.
         """
         if not hasattr(self, "term1_list") or not self.term1_list:
             print("No optimization trace found. Please run optimize() first.")
@@ -620,13 +557,13 @@ class  DCEWithConstraints:
         iters = range(1, len(self.term1_list) + 1)
         fig, ax1 = plt.subplots(figsize=figsize)
 
-        # 左轴：Penalty
+        # Left axis: Penalty
         ax1.plot(iters, self.penalty_list, label="Penalty (constraint)", color="green", linewidth=2)
         ax1.set_xlabel("Iteration")
         ax1.set_ylabel("Penalty", color="green")
         ax1.tick_params(axis='y', labelcolor="green")
 
-        # 右轴：Q1 / Q2
+        # Right axis: Q1 / Q2
         ax2 = ax1.twinx()
         ax2.plot(iters, self.term1_list, label="Q1 (SWD term)", color="blue", linewidth=2)
         ax2.plot(iters, self.term2_list, label="Q2 (WD term)", color="orange", linewidth=2)
@@ -637,7 +574,7 @@ class  DCEWithConstraints:
         if hasattr(self, "best_iter"):
             ax1.axvline(self.best_iter + 1, color="red", linestyle="--", linewidth=1.5, label=f"Best Iter ({self.best_iter + 1})")
 
-        # 合并图例，移到右侧
+        # Combine legends and move to right side
         lines1, labels1 = ax1.get_legend_handles_labels()
         lines2, labels2 = ax2.get_legend_handles_labels()
         ax1.legend(

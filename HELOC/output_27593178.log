@@ -1,0 +1,839 @@
+/zhome/c3/3/213266/myenv/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/zhome/c3/3/213266/SC/distributional-counterfactual-explanation/HELOC_new.py:47: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  target = df_heloc[target_name].replace({'Good': 0, 'Bad': 1})
+INFO:root:Optimization started
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35097130093192136
+INFO:root:eta=1, l=0.24000000000000002, r=1
+INFO:root:Iter 1: Q=3.2551, term1=0.0001, term2=0.2665, penalty=2.9886367321014404
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3438156724620564
+INFO:root:eta=1, l=0.278, r=1
+INFO:root:Iter 2: Q=3.0229, term1=0.0001, term2=0.2645, penalty=2.758410930633545
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3486109831851792
+INFO:root:eta=1, l=0.31410000000000005, r=1
+INFO:root:Iter 3: Q=2.8067, term1=0.0001, term2=0.2626, penalty=2.5440406799316406
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3520721406910446
+INFO:root:eta=1, l=0.34839500000000007, r=1
+INFO:root:Iter 4: Q=2.6067, term1=0.0001, term2=0.2608, penalty=2.345896005630493
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3455900771776426
+INFO:root:eta=1, l=0.38097525000000004, r=1
+INFO:root:Iter 5: Q=2.4216, term1=0.0002, term2=0.2591, penalty=2.1624808311462402
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34735512451382594
+INFO:root:eta=1, l=0.41192648750000005, r=1
+INFO:root:Iter 6: Q=2.2516, term1=0.0002, term2=0.2574, penalty=1.9941400289535522
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3559021737571207
+INFO:root:eta=1, l=0.44133016312500006, r=1
+INFO:root:Iter 7: Q=2.0931, term1=0.0002, term2=0.2558, penalty=1.8373465538024902
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3366462879839534
+INFO:root:eta=1, l=0.46926365496875005, r=1
+INFO:root:Iter 8: Q=1.9453, term1=0.0003, term2=0.2542, penalty=1.691147804260254
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34579061295104047
+INFO:root:eta=1, l=0.49580047222031254, r=1
+INFO:root:Iter 9: Q=1.8093, term1=0.0003, term2=0.2526, penalty=1.5567224025726318
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33969604198565023
+INFO:root:eta=1, l=0.5210104486092969, r=1
+INFO:root:Iter 10: Q=1.6826, term1=0.0003, term2=0.2511, penalty=1.4315769672393799
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33862751768804583
+INFO:root:eta=1, l=0.544959926178832, r=1
+INFO:root:Iter 11: Q=1.5670, term1=0.0003, term2=0.2495, penalty=1.3174216747283936
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34155547239214484
+INFO:root:eta=1, l=0.5677119298698905, r=1
+INFO:root:Iter 12: Q=1.4626, term1=0.0003, term2=0.2480, penalty=1.2145556211471558
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31973263508838795
+INFO:root:eta=1, l=0.589326333376396, r=1
+INFO:root:Iter 13: Q=1.3652, term1=0.0004, term2=0.2465, penalty=1.11863112449646
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3332540037457416
+INFO:root:eta=1, l=0.6098600167075762, r=1
+INFO:root:Iter 14: Q=1.2743, term1=0.0004, term2=0.2451, penalty=1.0291790962219238
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3340508107122649
+INFO:root:eta=1, l=0.6293670158721973, r=1
+INFO:root:Iter 15: Q=1.1895, term1=0.0004, term2=0.2438, penalty=0.9457595348358154
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3275194035005498
+INFO:root:eta=1, l=0.6478986650785875, r=1
+INFO:root:Iter 16: Q=1.1104, term1=0.0004, term2=0.2424, penalty=0.867968738079071
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33150935215548955
+INFO:root:eta=1, l=0.6655037318246582, r=1
+INFO:root:Iter 17: Q=1.0365, term1=0.0004, term2=0.2410, penalty=0.7954257726669312
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3314709801830132
+INFO:root:eta=1, l=0.6822285452334252, r=1
+INFO:root:Iter 18: Q=0.9675, term1=0.0005, term2=0.2397, penalty=0.7277762293815613
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32497097722855545
+INFO:root:eta=1, l=0.698117117971754, r=1
+INFO:root:Iter 19: Q=0.9049, term1=0.0005, term2=0.2384, penalty=0.6665511131286621
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32122449128599756
+INFO:root:eta=1, l=0.7132112620731663, r=1
+INFO:root:Iter 20: Q=0.8466, term1=0.0005, term2=0.2370, penalty=0.6095617413520813
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3244431822677378
+INFO:root:eta=1, l=0.727550698969508, r=1
+INFO:root:Iter 21: Q=0.7922, term1=0.0005, term2=0.2358, penalty=0.5564744472503662
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3218012564751945
+INFO:root:eta=1, l=0.7411731640210326, r=1
+INFO:root:Iter 22: Q=0.7415, term1=0.0005, term2=0.2345, penalty=0.5069714188575745
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3166111433936007
+INFO:root:eta=1, l=0.754114505819981, r=1
+INFO:root:Iter 23: Q=0.6941, term1=0.0005, term2=0.2333, penalty=0.46079280972480774
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3149977843702149
+INFO:root:eta=1, l=0.7664087805289819, r=1
+INFO:root:Iter 24: Q=0.6497, term1=0.0006, term2=0.2320, penalty=0.41773170232772827
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31881406306714827
+INFO:root:eta=1, l=0.7780883415025328, r=1
+INFO:root:Iter 25: Q=0.6083, term1=0.0006, term2=0.2308, penalty=0.377572238445282
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3075050303217544
+INFO:root:eta=1, l=0.7891839244274061, r=1
+INFO:root:Iter 26: Q=0.5699, term1=0.0006, term2=0.2295, penalty=0.34036216139793396
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3149267472059713
+INFO:root:eta=1, l=0.7997247282060358, r=1
+INFO:root:Iter 27: Q=0.5357, term1=0.0006, term2=0.2283, penalty=0.3074243664741516
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3039099593252185
+INFO:root:eta=1, l=0.809738491795734, r=1
+INFO:root:Iter 28: Q=0.5052, term1=0.0006, term2=0.2271, penalty=0.2781173884868622
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3040931475374227
+INFO:root:eta=1, l=0.8192515672059473, r=1
+INFO:root:Iter 29: Q=0.4790, term1=0.0007, term2=0.2258, penalty=0.253167062997818
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29898350355224984
+INFO:root:eta=1, l=0.8282889888456499, r=1
+INFO:root:Iter 30: Q=0.4546, term1=0.0007, term2=0.2245, penalty=0.2300702929496765
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3154863353264275
+INFO:root:eta=1, l=0.8368745394033674, r=1
+INFO:root:Iter 31: Q=0.4318, term1=0.0007, term2=0.2233, penalty=0.2085307538509369
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3013013780792669
+INFO:root:eta=1, l=0.8450308124331991, r=1
+INFO:root:Iter 32: Q=0.4105, term1=0.0007, term2=0.2221, penalty=0.18844330310821533
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3053352922590456
+INFO:root:eta=1, l=0.8527792718115391, r=1
+INFO:root:Iter 33: Q=0.3905, term1=0.0007, term2=0.2208, penalty=0.16970978677272797
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3084908848384826
+INFO:root:eta=1, l=0.8601403082209622, r=1
+INFO:root:Iter 34: Q=0.3718, term1=0.0008, term2=0.2196, penalty=0.15223892033100128
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29905987918829696
+INFO:root:eta=1, l=0.8671332928099141, r=1
+INFO:root:Iter 35: Q=0.3560, term1=0.0008, term2=0.2184, penalty=0.13761001825332642
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2900211667399936
+INFO:root:eta=1, l=0.8737766281694185, r=1
+INFO:root:Iter 36: Q=0.3414, term1=0.0008, term2=0.2171, penalty=0.1242484301328659
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3083531419477094
+INFO:root:eta=1, l=0.8800877967609475, r=1
+INFO:root:Iter 37: Q=0.3277, term1=0.0008, term2=0.2159, penalty=0.11179006844758987
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30286385177062586
+INFO:root:eta=1, l=0.8860834069229001, r=1
+INFO:root:Iter 38: Q=0.3149, term1=0.0008, term2=0.2147, penalty=0.10017392039299011
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29264013497800195
+INFO:root:eta=1, l=0.8917792365767551, r=1
+INFO:root:Iter 39: Q=0.3029, term1=0.0009, term2=0.2135, penalty=0.08934304118156433
+INFO:root:U_1-Qu_upper=0.49187120728455164, U_2-Qv_upper=-0.2969071368358717
+INFO:root:eta=1, l=0.8971902747479173, r=1
+INFO:root:Iter 40: Q=0.2916, term1=0.0009, term2=0.2123, penalty=0.07924430817365646
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29615231634986733
+INFO:root:eta=1, l=0.9023307610105215, r=1
+INFO:root:Iter 41: Q=0.2810, term1=0.0009, term2=0.2112, penalty=0.06985003501176834
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28945109832799515
+INFO:root:eta=1, l=0.9072142229599954, r=1
+INFO:root:Iter 42: Q=0.2711, term1=0.0009, term2=0.2100, penalty=0.0610487200319767
+INFO:root:U_1-Qu_upper=0.48976081316872033, U_2-Qv_upper=-0.2933422005775245
+INFO:root:eta=1, l=0.9118535118119957, r=1
+INFO:root:Iter 43: Q=0.2618, term1=0.0009, term2=0.2089, penalty=0.05286845564842224
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2906013508633614
+INFO:root:eta=1, l=0.9162608362213959, r=1
+INFO:root:Iter 44: Q=0.2530, term1=0.0009, term2=0.2078, penalty=0.04522998631000519
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2640353765597209
+INFO:root:eta=1, l=0.9204477944103261, r=1
+INFO:root:Iter 45: Q=0.2447, term1=0.0010, term2=0.2066, penalty=0.03811328858137131
+INFO:root:U_1-Qu_upper=0.49244405489452375, U_2-Qv_upper=-0.28462611409087896
+INFO:root:eta=1, l=0.9244254046898098, r=1
+INFO:root:Iter 46: Q=0.2370, term1=0.0010, term2=0.2055, penalty=0.03147764876484871
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28001199499471924
+INFO:root:eta=1, l=0.9282041344553194, r=1
+INFO:root:Iter 47: Q=0.2313, term1=0.0010, term2=0.2044, penalty=0.02691708691418171
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2868957046963723
+INFO:root:eta=1, l=0.9317939277325534, r=1
+INFO:root:Iter 48: Q=0.2264, term1=0.0010, term2=0.2033, penalty=0.023076480254530907
+INFO:root:U_1-Qu_upper=0.4920286229434171, U_2-Qv_upper=-0.27822781434711624
+INFO:root:eta=1, l=0.9352042313459258, r=1
+INFO:root:Iter 49: Q=0.2217, term1=0.0010, term2=0.2022, penalty=0.019495027139782906
+INFO:root:U_1-Qu_upper=0.49383734124958, U_2-Qv_upper=-0.2796311724485087
+INFO:root:eta=1, l=0.9384440197786295, r=1
+INFO:root:Iter 50: Q=0.2173, term1=0.0010, term2=0.2012, penalty=0.016155248507857323
+/zhome/c3/3/213266/SC/distributional-counterfactual-explanation/HELOC_new.py:496: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  best_X_lsc_hinge = best_X_lsc_hinge * std.values + mean.values  # 恢复 X_s 到原始 scale
+INFO:root:Optimization started
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35133045413230096
+INFO:root:eta=1, l=0.24000000000000002, r=1
+INFO:root:Iter 1: Q=3.2161, term1=0.0001, term2=0.2677, penalty=2.948477029800415
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35904925263875237
+INFO:root:eta=1, l=0.278, r=1
+INFO:root:Iter 2: Q=2.9859, term1=0.0001, term2=0.2656, penalty=2.720269203186035
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3567178432304953
+INFO:root:eta=1, l=0.31410000000000005, r=1
+INFO:root:Iter 3: Q=2.7730, term1=0.0001, term2=0.2637, penalty=2.5093352794647217
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3530382436986708
+INFO:root:eta=1, l=0.34839500000000007, r=1
+INFO:root:Iter 4: Q=2.5763, term1=0.0002, term2=0.2619, penalty=2.3143954277038574
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3381496560515564
+INFO:root:eta=1, l=0.38097525000000004, r=1
+INFO:root:Iter 5: Q=2.3944, term1=0.0002, term2=0.2601, penalty=2.1342086791992188
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35586544162427763
+INFO:root:eta=1, l=0.41192648750000005, r=1
+INFO:root:Iter 6: Q=2.2264, term1=0.0002, term2=0.2585, penalty=1.9679678678512573
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3424950290855932
+INFO:root:eta=1, l=0.44133016312500006, r=1
+INFO:root:Iter 7: Q=2.0697, term1=0.0003, term2=0.2568, penalty=1.812936782836914
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3405887669109369
+INFO:root:eta=1, l=0.46926365496875005, r=1
+INFO:root:Iter 8: Q=1.9235, term1=0.0003, term2=0.2552, penalty=1.6683827638626099
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3379823330856368
+INFO:root:eta=1, l=0.49580047222031254, r=1
+INFO:root:Iter 9: Q=1.7891, term1=0.0003, term2=0.2536, penalty=1.5355337858200073
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33787819662793833
+INFO:root:eta=1, l=0.5210104486092969, r=1
+INFO:root:Iter 10: Q=1.6659, term1=0.0004, term2=0.2520, penalty=1.4139111042022705
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3371593483809259
+INFO:root:eta=1, l=0.544959926178832, r=1
+INFO:root:Iter 11: Q=1.5550, term1=0.0004, term2=0.2505, penalty=1.3045316934585571
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34593059152923694
+INFO:root:eta=1, l=0.5677119298698905, r=1
+INFO:root:Iter 12: Q=1.4515, term1=0.0004, term2=0.2490, penalty=1.2025350332260132
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32837825788985525
+INFO:root:eta=1, l=0.589326333376396, r=1
+INFO:root:Iter 13: Q=1.3549, term1=0.0004, term2=0.2475, penalty=1.107421636581421
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.340376031576
+INFO:root:eta=1, l=0.6098600167075762, r=1
+INFO:root:Iter 14: Q=1.2648, term1=0.0005, term2=0.2460, penalty=1.0187257528305054
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3359429395522689
+INFO:root:eta=1, l=0.6293670158721973, r=1
+INFO:root:Iter 15: Q=1.1807, term1=0.0005, term2=0.2447, penalty=0.9360113143920898
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3276888336487295
+INFO:root:eta=1, l=0.6478986650785875, r=1
+INFO:root:Iter 16: Q=1.1022, term1=0.0005, term2=0.2433, penalty=0.8588780164718628
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3303422748410734
+INFO:root:eta=1, l=0.6655037318246582, r=1
+INFO:root:Iter 17: Q=1.0289, term1=0.0005, term2=0.2420, penalty=0.7869479656219482
+INFO:root:U_1-Qu_upper=0.49655466019023314, U_2-Qv_upper=-0.32815588856183725
+INFO:root:eta=1, l=0.6822285452334252, r=1
+INFO:root:Iter 18: Q=0.9610, term1=0.0006, term2=0.2406, penalty=0.7203681468963623
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33271573586687325
+INFO:root:eta=1, l=0.698117117971754, r=1
+INFO:root:Iter 19: Q=0.8991, term1=0.0006, term2=0.2393, penalty=0.6597899794578552
+INFO:root:U_1-Qu_upper=0.4928774194498728, U_2-Qv_upper=-0.32118060866184434
+INFO:root:eta=1, l=0.7132112620731663, r=1
+INFO:root:Iter 20: Q=0.8413, term1=0.0006, term2=0.2380, penalty=0.6032947897911072
+INFO:root:U_1-Qu_upper=0.49345991051207594, U_2-Qv_upper=-0.3281960517163444
+INFO:root:eta=1, l=0.727550698969508, r=1
+INFO:root:Iter 21: Q=0.7874, term1=0.0006, term2=0.2368, penalty=0.5506095886230469
+INFO:root:U_1-Qu_upper=0.49618361979986575, U_2-Qv_upper=-0.30940602174682946
+INFO:root:eta=1, l=0.7411731640210326, r=1
+INFO:root:Iter 22: Q=0.7370, term1=0.0007, term2=0.2355, penalty=0.5014746189117432
+INFO:root:U_1-Qu_upper=0.4957674583054343, U_2-Qv_upper=-0.3244150595467596
+INFO:root:eta=1, l=0.754114505819981, r=1
+INFO:root:Iter 23: Q=0.6899, term1=0.0007, term2=0.2343, penalty=0.4556180536746979
+INFO:root:U_1-Qu_upper=0.4969007822299444, U_2-Qv_upper=-0.31325302696890306
+INFO:root:eta=1, l=0.7664087805289819, r=1
+INFO:root:Iter 24: Q=0.6459, term1=0.0007, term2=0.2330, penalty=0.4128541052341461
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.311780246539817
+INFO:root:eta=1, l=0.7780883415025328, r=1
+INFO:root:Iter 25: Q=0.6048, term1=0.0007, term2=0.2318, penalty=0.3729737401008606
+INFO:root:U_1-Qu_upper=0.49092446749110485, U_2-Qv_upper=-0.32696100628138697
+INFO:root:eta=1, l=0.7891839244274061, r=1
+INFO:root:Iter 26: Q=0.5665, term1=0.0007, term2=0.2306, penalty=0.33597230911254883
+INFO:root:U_1-Qu_upper=0.4913739025011646, U_2-Qv_upper=-0.314939362472717
+INFO:root:eta=1, l=0.7997247282060358, r=1
+INFO:root:Iter 27: Q=0.5326, term1=0.0008, term2=0.2293, penalty=0.3033311069011688
+INFO:root:U_1-Qu_upper=0.48922127929342074, U_2-Qv_upper=-0.3051555691111207
+INFO:root:eta=1, l=0.809738491795734, r=1
+INFO:root:Iter 28: Q=0.5027, term1=0.0008, term2=0.2281, penalty=0.27461519837379456
+INFO:root:U_1-Qu_upper=0.48590041454468874, U_2-Qv_upper=-0.31182402128822023
+INFO:root:eta=1, l=0.8192515672059473, r=1
+INFO:root:Iter 29: Q=0.4769, term1=0.0008, term2=0.2268, penalty=0.2500752806663513
+INFO:root:U_1-Qu_upper=0.489161259529053, U_2-Qv_upper=-0.31153256833799253
+INFO:root:eta=1, l=0.8282889888456499, r=1
+INFO:root:Iter 30: Q=0.4528, term1=0.0008, term2=0.2256, penalty=0.22718995809555054
+INFO:root:U_1-Qu_upper=0.49056536489339553, U_2-Qv_upper=-0.301293100995137
+INFO:root:eta=1, l=0.8368745394033674, r=1
+INFO:root:Iter 31: Q=0.4302, term1=0.0008, term2=0.2243, penalty=0.20584748685359955
+INFO:root:U_1-Qu_upper=0.4892731809391075, U_2-Qv_upper=-0.3049451477478961
+INFO:root:eta=1, l=0.8450308124331991, r=1
+INFO:root:Iter 32: Q=0.4090, term1=0.0009, term2=0.2231, penalty=0.18594372272491455
+INFO:root:U_1-Qu_upper=0.4828414674846435, U_2-Qv_upper=-0.29931255225586034
+INFO:root:eta=1, l=0.8527792718115391, r=1
+INFO:root:Iter 33: Q=0.3893, term1=0.0009, term2=0.2219, penalty=0.16740275919437408
+INFO:root:U_1-Qu_upper=0.48697106693681685, U_2-Qv_upper=-0.3105881590989175
+INFO:root:eta=1, l=0.8601403082209622, r=1
+INFO:root:Iter 34: Q=0.3710, term1=0.0009, term2=0.2207, penalty=0.15029120445251465
+INFO:root:U_1-Qu_upper=0.48382536333869003, U_2-Qv_upper=-0.30654608277808354
+INFO:root:eta=1, l=0.8671332928099141, r=1
+INFO:root:Iter 35: Q=0.3556, term1=0.0009, term2=0.2195, penalty=0.13607189059257507
+INFO:root:U_1-Qu_upper=0.48553605025896246, U_2-Qv_upper=-0.2930726714787108
+INFO:root:eta=1, l=0.8737766281694185, r=1
+INFO:root:Iter 36: Q=0.3411, term1=0.0009, term2=0.2183, penalty=0.12281475961208344
+INFO:root:U_1-Qu_upper=0.48373372152174365, U_2-Qv_upper=-0.2893230106925692
+INFO:root:eta=1, l=0.8800877967609475, r=1
+INFO:root:Iter 37: Q=0.3276, term1=0.0010, term2=0.2171, penalty=0.11049015820026398
+INFO:root:U_1-Qu_upper=0.4807431882811891, U_2-Qv_upper=-0.2985362900772845
+INFO:root:eta=1, l=0.8860834069229001, r=1
+INFO:root:Iter 38: Q=0.3149, term1=0.0010, term2=0.2159, penalty=0.09892594814300537
+INFO:root:U_1-Qu_upper=0.48549619602605565, U_2-Qv_upper=-0.30314309156045965
+INFO:root:eta=1, l=0.8917792365767551, r=1
+INFO:root:Iter 39: Q=0.3029, term1=0.0010, term2=0.2148, penalty=0.08817904442548752
+INFO:root:U_1-Qu_upper=0.47996174156971855, U_2-Qv_upper=-0.2899612262404096
+INFO:root:eta=1, l=0.8971902747479173, r=1
+INFO:root:Iter 40: Q=0.2918, term1=0.0010, term2=0.2136, penalty=0.0781586691737175
+INFO:root:U_1-Qu_upper=0.4799891518125972, U_2-Qv_upper=-0.2801951749469263
+INFO:root:eta=1, l=0.9023307610105215, r=1
+INFO:root:Iter 41: Q=0.2813, term1=0.0010, term2=0.2124, penalty=0.06881563365459442
+INFO:root:U_1-Qu_upper=0.482389081662368, U_2-Qv_upper=-0.29765961901643906
+INFO:root:eta=1, l=0.9072142229599954, r=1
+INFO:root:Iter 42: Q=0.2714, term1=0.0011, term2=0.2113, penalty=0.06010424718260765
+INFO:root:U_1-Qu_upper=0.47813134271271823, U_2-Qv_upper=-0.29241286408127426
+INFO:root:eta=1, l=0.9118535118119957, r=1
+INFO:root:Iter 43: Q=0.2622, term1=0.0011, term2=0.2101, penalty=0.05204224959015846
+INFO:root:U_1-Qu_upper=0.4827951798566764, U_2-Qv_upper=-0.29440553046485235
+INFO:root:eta=1, l=0.9162608362213959, r=1
+INFO:root:Iter 44: Q=0.2535, term1=0.0011, term2=0.2090, penalty=0.04440832883119583
+INFO:root:U_1-Qu_upper=0.47655125160851264, U_2-Qv_upper=-0.29599062626303024
+INFO:root:eta=1, l=0.9204477944103261, r=1
+INFO:root:Iter 45: Q=0.2453, term1=0.0011, term2=0.2079, penalty=0.03734689950942993
+INFO:root:U_1-Qu_upper=0.4794684491739328, U_2-Qv_upper=-0.28820094222809983
+INFO:root:eta=1, l=0.9244254046898098, r=1
+INFO:root:Iter 46: Q=0.2376, term1=0.0011, term2=0.2068, penalty=0.030762821435928345
+INFO:root:U_1-Qu_upper=0.47426336707963546, U_2-Qv_upper=-0.27824538176090513
+INFO:root:eta=1, l=0.9282041344553194, r=1
+INFO:root:Iter 47: Q=0.2322, term1=0.0012, term2=0.2057, penalty=0.02652272954583168
+INFO:root:U_1-Qu_upper=0.47750434672821784, U_2-Qv_upper=-0.2832348156371734
+INFO:root:eta=1, l=0.9317939277325534, r=1
+INFO:root:Iter 48: Q=0.2273, term1=0.0012, term2=0.2046, penalty=0.0227087140083313
+INFO:root:U_1-Qu_upper=0.4787953572998057, U_2-Qv_upper=-0.29363638518655827
+INFO:root:eta=1, l=0.9352042313459258, r=1
+INFO:root:Iter 49: Q=0.2226, term1=0.0012, term2=0.2035, penalty=0.019152076914906502
+INFO:root:U_1-Qu_upper=0.47827446525372025, U_2-Qv_upper=-0.27480420123282895
+INFO:root:eta=1, l=0.9384440197786295, r=1
+INFO:root:Iter 50: Q=0.2182, term1=0.0012, term2=0.2024, penalty=0.015836263075470924
+/zhome/c3/3/213266/SC/distributional-counterfactual-explanation/HELOC_new.py:496: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  #     best_X_lsc_hinge = best_X_lsc_hinge * std.values + mean.values  # 恢复 X_s 到原始 scale
+INFO:root:Optimization started
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3668340327921868
+INFO:root:eta=1, l=0.24000000000000002, r=1
+INFO:root:Iter 1: Q=3.2566, term1=0.0001, term2=0.2685, penalty=2.988098621368408
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3551423810154584
+INFO:root:eta=1, l=0.278, r=1
+INFO:root:Iter 2: Q=3.0250, term1=0.0001, term2=0.2664, penalty=2.758612871170044
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35989490222689585
+INFO:root:eta=1, l=0.31410000000000005, r=1
+INFO:root:Iter 3: Q=2.8103, term1=0.0001, term2=0.2644, penalty=2.545959711074829
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3583164584448187
+INFO:root:eta=1, l=0.34839500000000007, r=1
+INFO:root:Iter 4: Q=2.6102, term1=0.0001, term2=0.2625, penalty=2.3476855754852295
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3503965981813451
+INFO:root:eta=1, l=0.38097525000000004, r=1
+INFO:root:Iter 5: Q=2.4257, term1=0.0002, term2=0.2608, penalty=2.1649458408355713
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3524415399727972
+INFO:root:eta=1, l=0.41192648750000005, r=1
+INFO:root:Iter 6: Q=2.2555, term1=0.0002, term2=0.2591, penalty=1.9964414834976196
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33894565063129917
+INFO:root:eta=1, l=0.44133016312500006, r=1
+INFO:root:Iter 7: Q=2.0970, term1=0.0002, term2=0.2575, penalty=1.8394960165023804
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3558878183019238
+INFO:root:eta=1, l=0.46926365496875005, r=1
+INFO:root:Iter 8: Q=1.9490, term1=0.0003, term2=0.2559, penalty=1.6931567192077637
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3414702439299366
+INFO:root:eta=1, l=0.49580047222031254, r=1
+INFO:root:Iter 9: Q=1.8121, term1=0.0003, term2=0.2543, penalty=1.5578298568725586
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3352060269162411
+INFO:root:eta=1, l=0.5210104486092969, r=1
+INFO:root:Iter 10: Q=1.6856, term1=0.0003, term2=0.2527, penalty=1.4328194856643677
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33020895387813404
+INFO:root:eta=1, l=0.544959926178832, r=1
+INFO:root:Iter 11: Q=1.5702, term1=0.0004, term2=0.2512, penalty=1.3189911842346191
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3394048512366456
+INFO:root:eta=1, l=0.5677119298698905, r=1
+INFO:root:Iter 12: Q=1.4657, term1=0.0004, term2=0.2497, penalty=1.2160134315490723
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.331613252597528
+INFO:root:eta=1, l=0.589326333376396, r=1
+INFO:root:Iter 13: Q=1.3682, term1=0.0004, term2=0.2482, penalty=1.1199949979782104
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33243243672232486
+INFO:root:eta=1, l=0.6098600167075762, r=1
+INFO:root:Iter 14: Q=1.2772, term1=0.0004, term2=0.2467, penalty=1.0304334163665771
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32634544186124986
+INFO:root:eta=1, l=0.6293670158721973, r=1
+INFO:root:Iter 15: Q=1.1922, term1=0.0004, term2=0.2453, penalty=0.9469126462936401
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32447430227902246
+INFO:root:eta=1, l=0.6478986650785875, r=1
+INFO:root:Iter 16: Q=1.1130, term1=0.0005, term2=0.2439, penalty=0.8690793514251709
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33231277043056934
+INFO:root:eta=1, l=0.6655037318246582, r=1
+INFO:root:Iter 17: Q=1.0390, term1=0.0005, term2=0.2426, penalty=0.7964314222335815
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32664076281846727
+INFO:root:eta=1, l=0.6822285452334252, r=1
+INFO:root:Iter 18: Q=0.9716, term1=0.0005, term2=0.2412, penalty=0.7304043173789978
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32248545617230134
+INFO:root:eta=1, l=0.698117117971754, r=1
+INFO:root:Iter 19: Q=0.9091, term1=0.0005, term2=0.2399, penalty=0.6691498160362244
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32588007625209175
+INFO:root:eta=1, l=0.7132112620731663, r=1
+INFO:root:Iter 20: Q=0.8507, term1=0.0006, term2=0.2386, penalty=0.6120264530181885
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3253013090178874
+INFO:root:eta=1, l=0.727550698969508, r=1
+INFO:root:Iter 21: Q=0.7961, term1=0.0006, term2=0.2374, penalty=0.5587167143821716
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3312664490152391
+INFO:root:eta=1, l=0.7411731640210326, r=1
+INFO:root:Iter 22: Q=0.7451, term1=0.0006, term2=0.2361, penalty=0.5090028643608093
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31390208449471196
+INFO:root:eta=1, l=0.754114505819981, r=1
+INFO:root:Iter 23: Q=0.6974, term1=0.0006, term2=0.2348, penalty=0.46264034509658813
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31402714071801857
+INFO:root:eta=1, l=0.7664087805289819, r=1
+INFO:root:Iter 24: Q=0.6529, term1=0.0006, term2=0.2335, penalty=0.41940438747406006
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3151799395866038
+INFO:root:eta=1, l=0.7780883415025328, r=1
+INFO:root:Iter 25: Q=0.6114, term1=0.0007, term2=0.2323, penalty=0.37908393144607544
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3214560909296856
+INFO:root:eta=1, l=0.7891839244274061, r=1
+INFO:root:Iter 26: Q=0.5725, term1=0.0007, term2=0.2310, penalty=0.34153997898101807
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30855764905097655
+INFO:root:eta=1, l=0.7997247282060358, r=1
+INFO:root:Iter 27: Q=0.5379, term1=0.0007, term2=0.2297, penalty=0.30820196866989136
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3087823320982976
+INFO:root:eta=1, l=0.809738491795734, r=1
+INFO:root:Iter 28: Q=0.5067, term1=0.0007, term2=0.2285, penalty=0.27825623750686646
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3039445050695983
+INFO:root:eta=1, l=0.8192515672059473, r=1
+INFO:root:Iter 29: Q=0.4805, term1=0.0008, term2=0.2272, penalty=0.2533564865589142
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31647853270375176
+INFO:root:eta=1, l=0.8282889888456499, r=1
+INFO:root:Iter 30: Q=0.4562, term1=0.0008, term2=0.2259, penalty=0.23025187849998474
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3207031491269395
+INFO:root:eta=1, l=0.8368745394033674, r=1
+INFO:root:Iter 31: Q=0.4334, term1=0.0008, term2=0.2247, penalty=0.20870493352413177
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3122889411763287
+INFO:root:eta=1, l=0.8450308124331991, r=1
+INFO:root:Iter 32: Q=0.4120, term1=0.0008, term2=0.2234, penalty=0.1886104792356491
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30372157888126355
+INFO:root:eta=1, l=0.8527792718115391, r=1
+INFO:root:Iter 33: Q=0.3920, term1=0.0009, term2=0.2222, penalty=0.16987037658691406
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3046852139496284
+INFO:root:eta=1, l=0.8601403082209622, r=1
+INFO:root:Iter 34: Q=0.3733, term1=0.0009, term2=0.2209, penalty=0.15239493548870087
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30526520599449997
+INFO:root:eta=1, l=0.8671332928099141, r=1
+INFO:root:Iter 35: Q=0.3578, term1=0.0009, term2=0.2197, penalty=0.13812097907066345
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2946340799067439
+INFO:root:eta=1, l=0.8737766281694185, r=1
+INFO:root:Iter 36: Q=0.3432, term1=0.0009, term2=0.2185, penalty=0.12468910217285156
+INFO:root:U_1-Qu_upper=0.49873964905475043, U_2-Qv_upper=-0.29743995087182046
+INFO:root:eta=1, l=0.8800877967609475, r=1
+INFO:root:Iter 37: Q=0.3294, term1=0.0009, term2=0.2173, penalty=0.11215820163488388
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3012856859072571
+INFO:root:eta=1, l=0.8860834069229001, r=1
+INFO:root:Iter 38: Q=0.3166, term1=0.0010, term2=0.2161, penalty=0.10051707923412323
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2902711191612118
+INFO:root:eta=1, l=0.8917792365767551, r=1
+INFO:root:Iter 39: Q=0.3045, term1=0.0010, term2=0.2149, penalty=0.08966290205717087
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2961330204023395
+INFO:root:eta=1, l=0.8971902747479173, r=1
+INFO:root:Iter 40: Q=0.2932, term1=0.0010, term2=0.2137, penalty=0.07954248040914536
+INFO:root:U_1-Qu_upper=0.4915275526738083, U_2-Qv_upper=-0.2899015392010896
+INFO:root:eta=1, l=0.9023307610105215, r=1
+INFO:root:Iter 41: Q=0.2826, term1=0.0010, term2=0.2125, penalty=0.07010619342327118
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28937123774534196
+INFO:root:eta=1, l=0.9072142229599954, r=1
+INFO:root:Iter 42: Q=0.2727, term1=0.0010, term2=0.2113, penalty=0.061321988701820374
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2947590413487689
+INFO:root:eta=1, l=0.9118535118119957, r=1
+INFO:root:Iter 43: Q=0.2633, term1=0.0011, term2=0.2102, penalty=0.05310419574379921
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2883496105451098
+INFO:root:eta=1, l=0.9162608362213959, r=1
+INFO:root:Iter 44: Q=0.2545, term1=0.0011, term2=0.2090, penalty=0.04545511677861214
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28107760247958385
+INFO:root:eta=1, l=0.9204477944103261, r=1
+INFO:root:Iter 45: Q=0.2462, term1=0.0011, term2=0.2079, penalty=0.03832315653562546
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2827709173575928
+INFO:root:eta=1, l=0.9244254046898098, r=1
+INFO:root:Iter 46: Q=0.2384, term1=0.0011, term2=0.2068, penalty=0.03167328983545303
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29151639996012396
+INFO:root:eta=1, l=0.9282041344553194, r=1
+INFO:root:Iter 47: Q=0.2324, term1=0.0011, term2=0.2056, penalty=0.026734881103038788
+INFO:root:U_1-Qu_upper=0.49312556994393403, U_2-Qv_upper=-0.2843969651418849
+INFO:root:eta=1, l=0.9317939277325534, r=1
+INFO:root:Iter 48: Q=0.2274, term1=0.0012, term2=0.2045, penalty=0.022906558588147163
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28182442657875334
+INFO:root:eta=1, l=0.9352042313459258, r=1
+INFO:root:Iter 49: Q=0.2227, term1=0.0012, term2=0.2034, penalty=0.019336577504873276
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.27195080179201964
+INFO:root:eta=1, l=0.9384440197786295, r=1
+INFO:root:Iter 50: Q=0.2183, term1=0.0012, term2=0.2023, penalty=0.01600748300552368
+/zhome/c3/3/213266/SC/distributional-counterfactual-explanation/HELOC_new.py:496: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  #     best_X_lsc_hinge = best_X_lsc_hinge * std.values + mean.values  # 恢复 X_s 到原始 scale
+INFO:root:Optimization started
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3590346200756343
+INFO:root:eta=1, l=0.24000000000000002, r=1
+INFO:root:Iter 1: Q=3.2392, term1=0.0001, term2=0.2676, penalty=2.97160267829895
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3656965794827403
+INFO:root:eta=1, l=0.278, r=1
+INFO:root:Iter 2: Q=3.0069, term1=0.0001, term2=0.2655, penalty=2.7413156032562256
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.36139283581852893
+INFO:root:eta=1, l=0.31410000000000005, r=1
+INFO:root:Iter 3: Q=2.7935, term1=0.0001, term2=0.2636, penalty=2.5298330783843994
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34034055233222554
+INFO:root:eta=1, l=0.34839500000000007, r=1
+INFO:root:Iter 4: Q=2.5951, term1=0.0001, term2=0.2618, penalty=2.333289861679077
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34205810468430503
+INFO:root:eta=1, l=0.38097525000000004, r=1
+INFO:root:Iter 5: Q=2.4116, term1=0.0002, term2=0.2600, penalty=2.1515371799468994
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3404785262108793
+INFO:root:eta=1, l=0.41192648750000005, r=1
+INFO:root:Iter 6: Q=2.2424, term1=0.0002, term2=0.2583, penalty=1.9841045141220093
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3331481926239053
+INFO:root:eta=1, l=0.44133016312500006, r=1
+INFO:root:Iter 7: Q=2.0846, term1=0.0002, term2=0.2566, penalty=1.8279935121536255
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3394707795574033
+INFO:root:eta=1, l=0.46926365496875005, r=1
+INFO:root:Iter 8: Q=1.9375, term1=0.0002, term2=0.2550, penalty=1.6824315786361694
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3249650444746069
+INFO:root:eta=1, l=0.49580047222031254, r=1
+INFO:root:Iter 9: Q=1.8016, term1=0.0003, term2=0.2534, penalty=1.548203945159912
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3383236939245137
+INFO:root:eta=1, l=0.5210104486092969, r=1
+INFO:root:Iter 10: Q=1.6774, term1=0.0003, term2=0.2518, penalty=1.4255707263946533
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32994928851982913
+INFO:root:eta=1, l=0.544959926178832, r=1
+INFO:root:Iter 11: Q=1.5634, term1=0.0003, term2=0.2503, penalty=1.31315279006958
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3242263296953814
+INFO:root:eta=1, l=0.5677119298698905, r=1
+INFO:root:Iter 12: Q=1.4593, term1=0.0003, term2=0.2488, penalty=1.2105871438980103
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32534447088062296
+INFO:root:eta=1, l=0.589326333376396, r=1
+INFO:root:Iter 13: Q=1.3622, term1=0.0004, term2=0.2473, penalty=1.1149345636367798
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32041517382057444
+INFO:root:eta=1, l=0.6098600167075762, r=1
+INFO:root:Iter 14: Q=1.2715, term1=0.0004, term2=0.2458, penalty=1.0257326364517212
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3195906694186252
+INFO:root:eta=1, l=0.6293670158721973, r=1
+INFO:root:Iter 15: Q=1.1869, term1=0.0004, term2=0.2443, penalty=0.9425532817840576
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31845717388701383
+INFO:root:eta=1, l=0.6478986650785875, r=1
+INFO:root:Iter 16: Q=1.1079, term1=0.0004, term2=0.2429, penalty=0.8650022149085999
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32534190511743516
+INFO:root:eta=1, l=0.6655037318246582, r=1
+INFO:root:Iter 17: Q=1.0342, term1=0.0005, term2=0.2415, penalty=0.7926818132400513
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32726873968379483
+INFO:root:eta=1, l=0.6822285452334252, r=1
+INFO:root:Iter 18: Q=0.9662, term1=0.0005, term2=0.2402, penalty=0.7259929180145264
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32786923973343046
+INFO:root:eta=1, l=0.698117117971754, r=1
+INFO:root:Iter 19: Q=0.9039, term1=0.0005, term2=0.2388, penalty=0.6650554537773132
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3127817807943028
+INFO:root:eta=1, l=0.7132112620731663, r=1
+INFO:root:Iter 20: Q=0.8458, term1=0.0005, term2=0.2375, penalty=0.6082322597503662
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32570296778958535
+INFO:root:eta=1, l=0.727550698969508, r=1
+INFO:root:Iter 21: Q=0.7915, term1=0.0005, term2=0.2362, penalty=0.5552399158477783
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.319847594403826
+INFO:root:eta=1, l=0.7411731640210326, r=1
+INFO:root:Iter 22: Q=0.7408, term1=0.0006, term2=0.2350, penalty=0.50581955909729
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31774099525897886
+INFO:root:eta=1, l=0.754114505819981, r=1
+INFO:root:Iter 23: Q=0.6934, term1=0.0006, term2=0.2337, penalty=0.459727942943573
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30904768565145085
+INFO:root:eta=1, l=0.7664087805289819, r=1
+INFO:root:Iter 24: Q=0.6492, term1=0.0006, term2=0.2324, penalty=0.4167412221431732
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31236355603516425
+INFO:root:eta=1, l=0.7780883415025328, r=1
+INFO:root:Iter 25: Q=0.6078, term1=0.0006, term2=0.2312, penalty=0.3766500949859619
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3084569312031182
+INFO:root:eta=1, l=0.7891839244274061, r=1
+INFO:root:Iter 26: Q=0.5698, term1=0.0006, term2=0.2299, penalty=0.3398714065551758
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31522195440197937
+INFO:root:eta=1, l=0.7997247282060358, r=1
+INFO:root:Iter 27: Q=0.5356, term1=0.0006, term2=0.2286, penalty=0.30696651339530945
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30597960086568093
+INFO:root:eta=1, l=0.809738491795734, r=1
+INFO:root:Iter 28: Q=0.5044, term1=0.0007, term2=0.2274, penalty=0.2770515978336334
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31547438980650483
+INFO:root:eta=1, l=0.8192515672059473, r=1
+INFO:root:Iter 29: Q=0.4780, term1=0.0007, term2=0.2261, penalty=0.2518482804298401
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30955046792868574
+INFO:root:eta=1, l=0.8282889888456499, r=1
+INFO:root:Iter 30: Q=0.4537, term1=0.0007, term2=0.2249, penalty=0.22884206473827362
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3018957973464061
+INFO:root:eta=1, l=0.8368745394033674, r=1
+INFO:root:Iter 31: Q=0.4310, term1=0.0007, term2=0.2236, penalty=0.20738689601421356
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2965564700451853
+INFO:root:eta=1, l=0.8450308124331991, r=1
+INFO:root:Iter 32: Q=0.4098, term1=0.0007, term2=0.2224, penalty=0.18737807869911194
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28918094879695216
+INFO:root:eta=1, l=0.8527792718115391, r=1
+INFO:root:Iter 33: Q=0.3899, term1=0.0007, term2=0.2211, penalty=0.1687178760766983
+INFO:root:U_1-Qu_upper=0.4947820556424043, U_2-Qv_upper=-0.30214053782014944
+INFO:root:eta=1, l=0.8601403082209622, r=1
+INFO:root:Iter 34: Q=0.3716, term1=0.0008, term2=0.2199, penalty=0.15167686343193054
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.30434830082438874
+INFO:root:eta=1, l=0.8671332928099141, r=1
+INFO:root:Iter 35: Q=0.3560, term1=0.0008, term2=0.2187, penalty=0.1373675912618637
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3082957436730697
+INFO:root:eta=1, l=0.8737766281694185, r=1
+INFO:root:Iter 36: Q=0.3415, term1=0.0008, term2=0.2174, penalty=0.1240195706486702
+INFO:root:U_1-Qu_upper=0.49689552136601456, U_2-Qv_upper=-0.29158997617239973
+INFO:root:eta=1, l=0.8800877967609475, r=1
+INFO:root:Iter 37: Q=0.3278, term1=0.0008, term2=0.2162, penalty=0.11157681047916412
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29311088968050053
+INFO:root:eta=1, l=0.8860834069229001, r=1
+INFO:root:Iter 38: Q=0.3150, term1=0.0008, term2=0.2150, penalty=0.09997521340847015
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2807048305336058
+INFO:root:eta=1, l=0.8917792365767551, r=1
+INFO:root:Iter 39: Q=0.3030, term1=0.0008, term2=0.2138, penalty=0.08921564370393753
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.2990160404615531
+INFO:root:eta=1, l=0.8971902747479173, r=1
+INFO:root:Iter 40: Q=0.2917, term1=0.0009, term2=0.2126, penalty=0.07907173782587051
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.29251245601252546
+INFO:root:eta=1, l=0.9023307610105215, r=1
+INFO:root:Iter 41: Q=0.2811, term1=0.0009, term2=0.2114, penalty=0.06966742128133774
+INFO:root:U_1-Qu_upper=0.49515556168976405, U_2-Qv_upper=-0.29121029396639614
+INFO:root:eta=1, l=0.9072142229599954, r=1
+INFO:root:Iter 42: Q=0.2711, term1=0.0009, term2=0.2102, penalty=0.06089885160326958
+INFO:root:U_1-Qu_upper=0.4950951546722066, U_2-Qv_upper=-0.29078328229387645
+INFO:root:eta=1, l=0.9118535118119957, r=1
+INFO:root:Iter 43: Q=0.2618, term1=0.0009, term2=0.2090, penalty=0.0527229979634285
+INFO:root:U_1-Qu_upper=0.49353464721576135, U_2-Qv_upper=-0.2814764636597192
+INFO:root:eta=1, l=0.9162608362213959, r=1
+INFO:root:Iter 44: Q=0.2530, term1=0.0009, term2=0.2079, penalty=0.045099854469299316
+INFO:root:U_1-Qu_upper=0.49408608721833003, U_2-Qv_upper=-0.2897067744638245
+INFO:root:eta=1, l=0.9204477944103261, r=1
+INFO:root:Iter 45: Q=0.2447, term1=0.0010, term2=0.2068, penalty=0.03799201548099518
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.28282753826559864
+INFO:root:eta=1, l=0.9244254046898098, r=1
+INFO:root:Iter 46: Q=0.2370, term1=0.0010, term2=0.2057, penalty=0.031364649534225464
+INFO:root:U_1-Qu_upper=0.48849271173945524, U_2-Qv_upper=-0.27339775340085387
+INFO:root:eta=1, l=0.9282041344553194, r=1
+INFO:root:Iter 47: Q=0.2315, term1=0.0010, term2=0.2046, penalty=0.026948481798171997
+INFO:root:U_1-Qu_upper=0.4940439607760309, U_2-Qv_upper=-0.2851517259501835
+INFO:root:eta=1, l=0.9317939277325534, r=1
+INFO:root:Iter 48: Q=0.2266, term1=0.0010, term2=0.2035, penalty=0.02310575172305107
+INFO:root:U_1-Qu_upper=0.48914790638662836, U_2-Qv_upper=-0.2768701489157786
+INFO:root:eta=1, l=0.9352042313459258, r=1
+INFO:root:Iter 49: Q=0.2219, term1=0.0010, term2=0.2024, penalty=0.019522320479154587
+INFO:root:U_1-Qu_upper=0.4978064708159765, U_2-Qv_upper=-0.2871002625489822
+INFO:root:eta=1, l=0.9384440197786295, r=1
+INFO:root:Iter 50: Q=0.2175, term1=0.0010, term2=0.2014, penalty=0.01618068292737007
+/zhome/c3/3/213266/SC/distributional-counterfactual-explanation/HELOC_new.py:496: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  #     best_X_lsc_hinge = best_X_lsc_hinge * std.values + mean.values  # 恢复 X_s 到原始 scale
+INFO:root:Optimization started
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35405236700203585
+INFO:root:eta=1, l=0.24000000000000002, r=1
+INFO:root:Iter 1: Q=3.2184, term1=0.0001, term2=0.2687, penalty=2.9497056007385254
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35278777326983884
+INFO:root:eta=1, l=0.278, r=1
+INFO:root:Iter 2: Q=2.9870, term1=0.0001, term2=0.2669, penalty=2.720071315765381
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3587360652548199
+INFO:root:eta=1, l=0.31410000000000005, r=1
+INFO:root:Iter 3: Q=2.7736, term1=0.0001, term2=0.2652, penalty=2.508424758911133
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.35032037407133093
+INFO:root:eta=1, l=0.34839500000000007, r=1
+INFO:root:Iter 4: Q=2.5782, term1=0.0001, term2=0.2635, penalty=2.3146660327911377
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3428191188180341
+INFO:root:eta=1, l=0.38097525000000004, r=1
+INFO:root:Iter 5: Q=2.3970, term1=0.0002, term2=0.2619, penalty=2.1351070404052734
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3377079642590333
+INFO:root:eta=1, l=0.41192648750000005, r=1
+INFO:root:Iter 6: Q=2.2289, term1=0.0002, term2=0.2603, penalty=1.9686088562011719
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3561176192072348
+INFO:root:eta=1, l=0.44133016312500006, r=1
+INFO:root:Iter 7: Q=2.0723, term1=0.0002, term2=0.2588, penalty=1.8135322332382202
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3403190228082043
+INFO:root:eta=1, l=0.46926365496875005, r=1
+INFO:root:Iter 8: Q=1.9260, term1=0.0002, term2=0.2571, penalty=1.6689361333847046
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34500128050980133
+INFO:root:eta=1, l=0.49580047222031254, r=1
+INFO:root:Iter 9: Q=1.7904, term1=0.0002, term2=0.2555, penalty=1.53489351272583
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33942528188089743
+INFO:root:eta=1, l=0.5210104486092969, r=1
+INFO:root:Iter 10: Q=1.6662, term1=0.0003, term2=0.2538, penalty=1.4123862981796265
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33616339592738925
+INFO:root:eta=1, l=0.544959926178832, r=1
+INFO:root:Iter 11: Q=1.5519, term1=0.0003, term2=0.2523, penalty=1.2996127605438232
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3451401877049424
+INFO:root:eta=1, l=0.5677119298698905, r=1
+INFO:root:Iter 12: Q=1.4477, term1=0.0003, term2=0.2508, penalty=1.1969202756881714
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3261557594814665
+INFO:root:eta=1, l=0.589326333376396, r=1
+INFO:root:Iter 13: Q=1.3514, term1=0.0003, term2=0.2492, penalty=1.1021913290023804
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.34014345015675435
+INFO:root:eta=1, l=0.6098600167075762, r=1
+INFO:root:Iter 14: Q=1.2616, term1=0.0003, term2=0.2477, penalty=1.0138542652130127
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.33475969957373714
+INFO:root:eta=1, l=0.6293670158721973, r=1
+INFO:root:Iter 15: Q=1.1777, term1=0.0004, term2=0.2462, penalty=0.9314771890640259
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3280157478174281
+INFO:root:eta=1, l=0.6478986650785875, r=1
+INFO:root:Iter 16: Q=1.0994, term1=0.0004, term2=0.2447, penalty=0.8546568155288696
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32612989008856513
+INFO:root:eta=1, l=0.6655037318246582, r=1
+INFO:root:Iter 17: Q=1.0263, term1=0.0004, term2=0.2433, penalty=0.7830042243003845
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3359147512973782
+INFO:root:eta=1, l=0.6822285452334252, r=1
+INFO:root:Iter 18: Q=0.9585, term1=0.0004, term2=0.2418, penalty=0.7166167497634888
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.32870077336495335
+INFO:root:eta=1, l=0.698117117971754, r=1
+INFO:root:Iter 19: Q=0.8968, term1=0.0004, term2=0.2405, penalty=0.6563102006912231
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3188848638101947
+INFO:root:eta=1, l=0.7132112620731663, r=1
+INFO:root:Iter 20: Q=0.8392, term1=0.0005, term2=0.2391, penalty=0.6000528335571289
+INFO:root:U_1-Qu_upper=0.49859670652635524, U_2-Qv_upper=-0.32157799478974797
+INFO:root:eta=1, l=0.727550698969508, r=1
+INFO:root:Iter 21: Q=0.7853, term1=0.0005, term2=0.2377, penalty=0.5475523471832275
+INFO:root:U_1-Qu_upper=0.4901232748428966, U_2-Qv_upper=-0.32679988705594726
+INFO:root:eta=1, l=0.7411731640210326, r=1
+INFO:root:Iter 22: Q=0.7350, term1=0.0005, term2=0.2364, penalty=0.4986496567726135
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31836406160170266
+INFO:root:eta=1, l=0.754114505819981, r=1
+INFO:root:Iter 23: Q=0.6881, term1=0.0005, term2=0.2350, penalty=0.4530407786369324
+INFO:root:U_1-Qu_upper=0.49091567911788986, U_2-Qv_upper=-0.3211512110178973
+INFO:root:eta=1, l=0.7664087805289819, r=1
+INFO:root:Iter 24: Q=0.6442, term1=0.0005, term2=0.2337, penalty=0.4105043411254883
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.31676719302993145
+INFO:root:eta=1, l=0.7780883415025328, r=1
+INFO:root:Iter 25: Q=0.6032, term1=0.0006, term2=0.2324, penalty=0.37083420157432556
+INFO:root:U_1-Qu_upper=0.4909923430446004, U_2-Qv_upper=-0.3158549300559274
+INFO:root:eta=1, l=0.7891839244274061, r=1
+INFO:root:Iter 26: Q=0.5649, term1=0.0006, term2=0.2311, penalty=0.3338368237018585
+INFO:root:U_1-Qu_upper=0.4901103253167622, U_2-Qv_upper=-0.31869973540844937
+INFO:root:eta=1, l=0.7997247282060358, r=1
+INFO:root:Iter 27: Q=0.5310, term1=0.0006, term2=0.2298, penalty=0.30115044116973877
+INFO:root:U_1-Qu_upper=0.4898623558572033, U_2-Qv_upper=-0.3089060993674045
+INFO:root:eta=1, l=0.809738491795734, r=1
+INFO:root:Iter 28: Q=0.5011, term1=0.0006, term2=0.2286, penalty=0.27255386114120483
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.3085070370758562
+INFO:root:eta=1, l=0.8192515672059473, r=1
+INFO:root:Iter 29: Q=0.4751, term1=0.0006, term2=0.2273, penalty=0.2478746473789215
+INFO:root:U_1-Qu_upper=0.48728164696970594, U_2-Qv_upper=-0.3039295897100503
+INFO:root:eta=1, l=0.8282889888456499, r=1
+INFO:root:Iter 30: Q=0.4512, term1=0.0007, term2=0.2260, penalty=0.22514879703521729
+INFO:root:U_1-Qu_upper=0.4896052208668026, U_2-Qv_upper=-0.3081020986727963
+INFO:root:eta=1, l=0.8368745394033674, r=1
+INFO:root:Iter 31: Q=0.4287, term1=0.0007, term2=0.2248, penalty=0.20393270254135132
+INFO:root:U_1-Qu_upper=0.49260481287081026, U_2-Qv_upper=-0.31569505216719845
+INFO:root:eta=1, l=0.8450308124331991, r=1
+INFO:root:Iter 32: Q=0.4077, term1=0.0007, term2=0.2235, penalty=0.1841576248407364
+INFO:root:U_1-Qu_upper=0.4927395066587408, U_2-Qv_upper=-0.2929048719289081
+INFO:root:eta=1, l=0.8527792718115391, r=1
+INFO:root:Iter 33: Q=0.3880, term1=0.0007, term2=0.2223, penalty=0.16571544110774994
+INFO:root:U_1-Qu_upper=0.4894841130827396, U_2-Qv_upper=-0.3079573543258039
+INFO:root:eta=1, l=0.8601403082209622, r=1
+INFO:root:Iter 34: Q=0.3702, term1=0.0007, term2=0.2211, penalty=0.14910894632339478
+INFO:root:U_1-Qu_upper=0.4907068627735243, U_2-Qv_upper=-0.30740263316596744
+INFO:root:eta=1, l=0.8671332928099141, r=1
+INFO:root:Iter 35: Q=0.3548, term1=0.0007, term2=0.2198, penalty=0.1349693089723587
+INFO:root:U_1-Qu_upper=0.49388370704073953, U_2-Qv_upper=-0.30530782837608533
+INFO:root:eta=1, l=0.8737766281694185, r=1
+INFO:root:Iter 36: Q=0.3404, term1=0.0008, term2=0.2186, penalty=0.12178552150726318
+INFO:root:U_1-Qu_upper=0.4884920520092429, U_2-Qv_upper=-0.29623114588555927
+INFO:root:eta=1, l=0.8800877967609475, r=1
+INFO:root:Iter 37: Q=0.3269, term1=0.0008, term2=0.2174, penalty=0.10949309915304184
+INFO:root:U_1-Qu_upper=0.4920816832783198, U_2-Qv_upper=-0.2962805291623258
+INFO:root:eta=1, l=0.8860834069229001, r=1
+INFO:root:Iter 38: Q=0.3142, term1=0.0008, term2=0.2162, penalty=0.09803161025047302
+INFO:root:U_1-Qu_upper=0.48855589190166365, U_2-Qv_upper=-0.2917220209956512
+INFO:root:eta=1, l=0.8917792365767551, r=1
+INFO:root:Iter 39: Q=0.3023, term1=0.0008, term2=0.2150, penalty=0.08734498172998428
+INFO:root:U_1-Qu_upper=0.4929156254453022, U_2-Qv_upper=-0.29683102999999694
+INFO:root:eta=1, l=0.8971902747479173, r=1
+INFO:root:Iter 40: Q=0.2912, term1=0.0008, term2=0.2138, penalty=0.07738082110881805
+INFO:root:U_1-Qu_upper=0.4867610706955518, U_2-Qv_upper=-0.29746175855098195
+INFO:root:eta=1, l=0.9023307610105215, r=1
+INFO:root:Iter 41: Q=0.2807, term1=0.0008, term2=0.2126, penalty=0.06809020042419434
+INFO:root:U_1-Qu_upper=0.48836534328897496, U_2-Qv_upper=-0.29497232354733555
+INFO:root:eta=1, l=0.9072142229599954, r=1
+INFO:root:Iter 42: Q=0.2709, term1=0.0008, term2=0.2114, penalty=0.05942770093679428
+INFO:root:U_1-Qu_upper=0.48704208544362143, U_2-Qv_upper=-0.2943752911363405
+INFO:root:eta=1, l=0.9118535118119957, r=1
+INFO:root:Iter 43: Q=0.2617, term1=0.0009, term2=0.2103, penalty=0.05137905851006508
+INFO:root:U_1-Qu_upper=0.48489786881067365, U_2-Qv_upper=-0.28582323581449204
+INFO:root:eta=1, l=0.9162608362213959, r=1
+INFO:root:Iter 44: Q=0.2530, term1=0.0009, term2=0.2092, penalty=0.043877191841602325
+INFO:root:U_1-Qu_upper=0.48367846442816004, U_2-Qv_upper=-0.295767492662709
+INFO:root:eta=1, l=0.9204477944103261, r=1
+INFO:root:Iter 45: Q=0.2448, term1=0.0009, term2=0.2080, penalty=0.03679807111620903
+INFO:root:U_1-Qu_upper=0.48665736151776556, U_2-Qv_upper=-0.2912349554273926
+INFO:root:eta=1, l=0.9244254046898098, r=1
+INFO:root:Iter 46: Q=0.2373, term1=0.0009, term2=0.2069, penalty=0.030394528061151505
+INFO:root:U_1-Qu_upper=0.48744210610126115, U_2-Qv_upper=-0.29476986901219576
+INFO:root:eta=1, l=0.9282041344553194, r=1
+INFO:root:Iter 47: Q=0.2321, term1=0.0009, term2=0.2058, penalty=0.0262911319732666
+INFO:root:U_1-Qu_upper=0.48747731312267134, U_2-Qv_upper=-0.2729736043351479
+INFO:root:eta=1, l=0.9317939277325534, r=1
+INFO:root:Iter 48: Q=0.2272, term1=0.0009, term2=0.2047, penalty=0.02249274216592312
+INFO:root:U_1-Qu_upper=0.48321890844820814, U_2-Qv_upper=-0.28357514264931055
+INFO:root:eta=1, l=0.9352042313459258, r=1
+INFO:root:Iter 49: Q=0.2226, term1=0.0010, term2=0.2036, penalty=0.018950682133436203
+INFO:root:U_1-Qu_upper=0.5, U_2-Qv_upper=-0.27121659365351897
+INFO:root:eta=1, l=0.9384440197786295, r=1
+INFO:root:Iter 50: Q=0.2182, term1=0.0010, term2=0.2026, penalty=0.01564762555062771
+/zhome/c3/3/213266/SC/distributional-counterfactual-explanation/HELOC_new.py:496: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  #     best_X_lsc_hinge = best_X_lsc_hinge * std.values + mean.values  # 恢复 X_s 到原始 scale
+Using device: cuda
+Test Accuracy: 71.75%
+X Sliced Wasserstein Distance (SWD) with LSC constraint: 0.036088
+Y Wasserstein Distance (WD) with LSC constraint: 0.251462
+X Sliced Wasserstein Distance (SWD) with LSC constraint: 0.039125
+Y Wasserstein Distance (WD) with LSC constraint: 0.252983
+X Sliced Wasserstein Distance (SWD) with LSC constraint: 0.038553
+Y Wasserstein Distance (WD) with LSC constraint: 0.252889
+X Sliced Wasserstein Distance (SWD) with LSC constraint: 0.035981
+Y Wasserstein Distance (WD) with LSC constraint: 0.251700
+X Sliced Wasserstein Distance (SWD) with LSC constraint: 0.034743
+Y Wasserstein Distance (WD) with LSC constraint: 0.253200
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 27593178: <NONAME> in cluster <dcc> Done
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s242612> in cluster <dcc> at Sat Jan 10 12:36:19 2026
+Job was executed on host(s) <4*n-62-20-10>, in queue <gpuv100>, as user <s242612> in cluster <dcc> at Sat Jan 10 12:36:19 2026
+</zhome/c3/3/213266> was used as the home directory.
+</zhome/c3/3/213266/SC/distributional-counterfactual-explanation> was used as the working directory.
+Started at Sat Jan 10 12:36:19 2026
+Terminated at Sat Jan 10 14:33:46 2026
+Results reported at Sat Jan 10 14:33:46 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -q gpuv100              # 指定队列类型
+#BSUB -gpu "num=1"             # 请求一个 GPU
+#BSUB -n 4                     # 请求 4 个 CPU 核心
+#BSUB -R "rusage[mem=4096]"     # 请求 4096MB 内存
+#BSUB -W 6:00                  # 设置最大运行时长为 1 小时
+#BSUB -o output_%J.log         # 输出日志文件名设置为 output_<job_id>.log
+
+# 激活虚拟环境
+source ~/myenv/bin/activate
+
+# 运行你的 Python 脚本
+# python HELOC.py
+# python Cardio.py
+# python Cardio.py
+# python cardio_new.py
+python HELOC_new.py
+# python market_new.py
+
+
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   7143.00 sec.
+    Max Memory :                                 7855 MB
+    Average Memory :                             7632.11 MB
+    Total Requested Memory :                     16384.00 MB
+    Delta Memory :                               8529.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                10
+    Run time :                                   7069 sec.
+    Turnaround time :                            7047 sec.
+
+The output (if any) is above this job summary.
+

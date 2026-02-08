@@ -3,7 +3,7 @@ import torch
 class StdRecovery:
     def __init__(self, feature_names, bounds: dict, max_drop_ratio=0.5, verbose=False):
         """
-        标准差回收算法：通过删除 R 集合中的样本点，尽量将某些特征的标准差压到给定上界以下
+        Standard Deviation Recovery Algorithm: Reduce the standard deviation of specific features to below the given upper bound by removing sample points in the R set
         """
         self.feature_names = feature_names
         self.name2idx = {n: i for i, n in enumerate(feature_names)}
@@ -11,22 +11,21 @@ class StdRecovery:
         self.max_drop_ratio = max_drop_ratio
         self.verbose = verbose
 
-        # ✅ 新增：记录删除的原始行索引
+        # New: Record the original row indices of deleted samples
         self.last_dropped_indices = []
         self.last_dropped_indices_by_feature = {}
 
     def recover(self, X_cf, R_mask):
         """
-        回收函数：根据 R_mask 指示的 R 集合，删除极端点以降低标准差
+        Recovery Function: Reduce standard deviation by removing extreme points based on the R set indicated by R_mask
         """
         X = X_cf.clone()
-        N0 = X.shape[0]  # 初始样本数用于比例
-        alive_idx = torch.arange(N0, device=X.device)  # ✅ 原始索引映射
+        N0 = X.shape[0]  # Initial sample count for ratio calculation
+        alive_idx = torch.arange(N0, device=X.device)  #  Original index mapping
 
-        # 必须在函数开头初始化！这行漏了就会报UnboundLocalError
-        current_R_mask = R_mask.clone()  # 初始化当前R_mask，与输入R_mask长度一致
+        current_R_mask = R_mask.clone()  # Initialize current_R_mask with the same length as input R_mask
 
-        # 每次调用先清空
+        # Clear records before each call
         self.last_dropped_indices = []
         self.last_dropped_indices_by_feature = {}
 
@@ -42,12 +41,10 @@ class StdRecovery:
             keep = torch.ones(X.shape[0], dtype=torch.bool, device=X.device)
             dropped = 0
             success = False
-            dropped_this_feature = []  # ✅ 本特征的 drop 记录
+            dropped_this_feature = []  # Drop records for this feature
 
             while True:
                 mu = X[keep, j].mean()
-                # candidates = torch.nonzero(R_mask[alive_idx] & keep, as_tuple=True)[0]
-                # 唯一关键修改：用 current_R_mask 替代 R_mask[alive_idx]
                 candidates = torch.nonzero(current_R_mask & keep, as_tuple=True)[0]
 
                 if len(candidates) == 0:
@@ -59,7 +56,7 @@ class StdRecovery:
                     alive_idx = alive_idx[keep]
                     break
 
-                # 左右分组
+                # Split into left and right groups
                 left = [idx.item() for idx in candidates if X[idx, j] < mu]
                 right = [idx.item() for idx in candidates if X[idx, j] > mu]
 
@@ -83,7 +80,7 @@ class StdRecovery:
                     X = X[keep]
                     alive_idx = alive_idx[keep]
                     success = True
-                    current_R_mask = current_R_mask[keep]  # ✅ 同步裁剪 R_mask
+                    current_R_mask = current_R_mask[keep]  
                     if self.verbose:
                         print(f"[StdRecovery] {col} success: std={std_now:.3f} ≤ {high} "
                               f"(dropped {dropped})")
@@ -95,16 +92,16 @@ class StdRecovery:
                               f"max drop ratio reached (dropped {dropped})")
                     X = X[keep]
                     alive_idx = alive_idx[keep]
-                    current_R_mask = current_R_mask[keep]  # ✅ 同步裁剪 R_mask
+                    current_R_mask = current_R_mask[keep]  
                     break
 
-            # 保存本特征的 drop 记录
+            # Save drop records for this feature
             self.last_dropped_indices.extend(dropped_this_feature)
             self.last_dropped_indices_by_feature[col] = dropped_this_feature
 
             if not success:
                 X = X[keep]
                 alive_idx = alive_idx[keep]
-                current_R_mask = current_R_mask[keep]  # ✅ 同步裁剪 R_mask
+                current_R_mask = current_R_mask[keep]  
 
         return X
