@@ -8,9 +8,9 @@
 
 source ~/myenv/bin/activate
 
-# python HELOC_new.py
-# python cardio_new.py
-python market_new.py
+# python HELOC.py
+# python cardio.py
+python market.py
 
 
 

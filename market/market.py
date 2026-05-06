@@ -393,7 +393,7 @@ configs_hinge = [
         "relation": {
             "MntFruits": (["MntSweetProducts"], [0.5785], 0.0)
         },
-        "lambda": 10,
+        "lambda": 1,
         "mode": "hinge",
         "tolerance":  target_value  
     }
@@ -416,7 +416,7 @@ for current_seed in seed_range:
         df_X=df_explain, 
         explain_columns=explain_columns,
         y_target=y_target, 
-        lr=1e-1, 
+        lr=10, 
         n_proj=N,
         delta=delta,
         constraint_manager=constraint_manager_hinge
@@ -475,8 +475,8 @@ from explainers.constraints.FSDConstraint import FSDConstraintTorch
 configs = [
     {
         "type": "fsd",
-        "lambda": 1,
-        "dir_map": {"NumWebVisitsMonth": 1},
+        "lambda": 0.004,
+        "dir_map": {"NumDealsPurchases": 1},
         "M": 100,        
         "sample_mode": "quantile"
     }
@@ -499,7 +499,7 @@ for current_seed in seed_range:
         df_X=df_explain, 
         explain_columns=explain_columns,
         y_target=y_target, 
-        lr=1e-1, 
+        lr=10, 
         n_proj=N,
         delta=delta,
         constraint_manager=constraint_manager_fsd
@@ -548,4 +548,4 @@ df_metrics_fsd = pd.DataFrame(metrics_fsd_list)
 ws_metrics = wb_fsd.create_sheet(title="FSD_Metrics_Summary")
 for r in dataframe_to_rows(df_metrics_fsd, index=False, header=True):
     ws_metrics.append(r)
-wb_fsd.save("market_FSDConstraint.xlsx")
+wb_fsd.save("market_FSDConstraint_NumDealsPurchases_0.004.xlsx")
