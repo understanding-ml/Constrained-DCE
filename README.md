@@ -1,87 +1,159 @@
-# Constrained Distributional Counterfactual Explanations
+- mean constraints;
+- standard-deviation constraints;
+- linear structural constraints (LSC); and
+- first-order stochastic dominance (FSD) constraints.
 
-This repository contains the implementation of **Constrained Distributional Counterfactual Explanations (Constrained DCE)**.
+The repository also includes an optional recovery procedure for obtaining
+strict moment feasibility and evaluation code for the DiCE and GLOBE-CE
+baselines.
 
-The project extends the original Distributional Counterfactual Explanations (DCE) framework by adding a constraint management module. The goal is to generate distribution-level counterfactual explanations while also satisfying practical feature constraints, such as mean constraints, standard deviation constraints, linear structural constraints, and first-order stochastic dominance constraints.
+## Method overview
 
-## 1. Core Modules
+The original DCE objective searches for a generated population that remains
+close to the factual population in input space while matching a desired output
+distribution. CDCE augments this objective with constraint penalties:
 
-| File Path                 | Description                                                                                                                                                                                            |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `explainers/dce_v2.py`    | Implements the `DCEWithConstraints` class. It extends the original DCE framework with constraint penalty integration and GPU support.                                                                  |
-| `explainers/manager.py`   | Implements the `ConstraintManager` class. It manages different constraint types and combines their penalty terms during optimization.                                                                  |
-| `explainers/constraints/` | Contains the implementation of different constraint types, including mean, standard deviation, linear structural constraint, and first-order stochastic dominance.                                     |
-| `explainers/recovery/`    | Contains post-processing recovery modules. `RecoveryManager` controls the recovery process, and the folder includes recovery methods for moment-based constraints such as mean and standard deviation. |
-| `models/`                 | Contains predictive models used in the experiments, including MLP, logistic regression, SVM, and RBF-based models.                                                                                     |
-| `utils/`                  | Contains utility functions for data processing, transformation, visualization, and logging.                                                                                                            |
+```text
+CDCE objective
+  = input-distribution distance
+  + output-distribution distance
+  + weighted feasibility penalty.
+```
 
-## 2. Experimental Resources
+`DCEWithConstraints` performs the optimization, while `ConstraintManager`
+constructs and combines the selected constraint penalties. Moment constraints
+can additionally use the recovery module when strict feasibility is required.
 
-| Path                                 | Description                                                                                                  |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `data/`                              | Stores raw datasets used in the experiments.                                                                 |
-| `germancredit/`                      | Stores German Credit case-study results and constraint experiment outputs.                                   |
-| `HELOC/`                             | Contains experiment scripts and result files for the HELOC validation dataset.                               |
-| `cardio/`                            | Contains experiment scripts and result files for the Cardio validation dataset.                              |
-| `market/`                            | Contains experiment scripts and result files for the Marketing Campaign validation dataset.                  |
-| `26_german_credit.ipynb`             | Full workflow notebook for the German Credit case study, including experiment execution and result analysis. |
-| `HELOC_analysis.ipynb`               | Notebook for analyzing HELOC experiment results.                                                             |
-| `cardio_analysis.ipynb`              | Notebook for analyzing Cardio experiment results.                                                            |
-| `market_analysis.ipynb`              | Notebook for analyzing Marketing Campaign experiment results.                                                |
-| `scripts/run_validation_datasets.sh` | Shell script for running validation dataset experiments in batch.                                            |
+## Repository structure
 
-## 3. Installation
+```text
+.
+|-- explainers/
+|   |-- constraints/
+|   |   |-- MeanConstraint.py
+|   |   |-- StdConstraint.py
+|   |   |-- LSCConstraint.py
+|   |   `-- FSDConstraint.py
+|   |-- recovery/
+|   |   |-- RecoveryManager.py
+|   |   |-- MeanRecovery.py
+|   |   `-- StdRecovery.py
+|   |-- dce.py
+|   |-- dce_v2.py
+|   |-- distances.py
+|   `-- manager.py
+|-- baselines/
+|   |-- dice/
+|   `-- globe-ce/
+|-- germancredit/
+|-- HELOC/
+|-- cardio/
+|-- market/
+|-- data/
+|-- models/
+|-- utils/
+|-- experiments/
+|-- scripts/
+|-- 26_german_credit.ipynb
+|-- HELOC_analysis.ipynb
+|-- cardio_analysis.ipynb
+`-- market_analysis.ipynb
+```
 
-Install the required dependencies with:
+### Core implementation
+
+| Path | Description |
+| --- | --- |
+| `explainers/dce.py` | Original unconstrained DCE implementation. |
+| `explainers/dce_v2.py` | CDCE implementation through the `DCEWithConstraints` class. |
+| `explainers/manager.py` | Constraint configuration and penalty aggregation. |
+| `explainers/constraints/` | Mean, standard-deviation, LSC, and FSD penalties. |
+| `explainers/recovery/` | Optional recovery procedures for strict moment feasibility. |
+| `explainers/distances.py` | Sliced Wasserstein and Wasserstein distance utilities. |
+| `models/` | Prediction models used by the experiments. |
+
+### Experiments and analysis
+
+| Path | Description |
+| --- | --- |
+| `26_german_credit.ipynb` | German Credit case-study workflow and analysis. |
+| `HELOC/HELOC.py` | HELOC experiments. |
+| `cardio/cardio.py` | Cardio experiments. |
+| `market/market.py` | Marketing Campaign experiments. |
+| `HELOC_analysis.ipynb` | HELOC result analysis. |
+| `cardio_analysis.ipynb` | Cardio result analysis. |
+| `market_analysis.ipynb` | Marketing Campaign result analysis. |
+| `baselines/dice/` | DiCE evaluation code, notebooks, and saved summaries. |
+| `baselines/globe-ce/` | GLOBE-CE evaluation code, notebooks, and saved summaries. |
+
+## Installation
+
+Clone the repository and enter its root directory:
+
+```bash
+git clone https://github.com/understanding-ml/Constrained-DCE.git
+cd Constrained-DCE
+```
+
+Creating an isolated Python environment is recommended:
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Linux or macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+Or on Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Install the main dependencies:
 
 ```bash
 pip install -r requirement.txt
 ```
 
-## 4. Running Experiments
+The analysis notebooks and saved Excel outputs additionally require Jupyter
+and `openpyxl`. The DiCE baseline requires `dice-ml`:
 
-To run the German Credit case study, open and run:
+```bash
+pip install jupyter openpyxl dice-ml
+```
+
+## Running the experiments
+
+Run commands from the repository root so that local package and data paths are
+resolved correctly.
+
+### German Credit case study
+
+Open and execute:
 
 ```text
 26_german_credit.ipynb
 ```
 
-To run validation dataset experiments, use:
+The notebook contains the German Credit DCE/CDCE workflow, constraint
+evaluation, and recovery analysis.
+
+### Validation datasets
+
+The three validation experiments can be run separately:
 
 ```bash
-bash scripts/run_validation_datasets.sh
-```
-
-Individual dataset scripts can also be run directly, for example:
-
-```bash
-python cardio/cardio.py
 python HELOC/HELOC.py
+python cardio/cardio.py
 python market/market.py
 ```
 
-## 5. Project Structure
+Each experiment evaluates unconstrained DCE and the applicable CDCE constraint
+families. The analysis notebooks read the saved experimental outputs and
+compute the reported five-run summaries.
 
-```text
-.
-├── data/
-├── explainers/
-│   ├── constraints/
-│   ├── recovery/
-│   ├── dce.py
-│   ├── dce_v2.py
-│   └── manager.py
-├── models/
-├── utils/
-├── germancredit/
-├── HELOC/
-├── cardio/
-├── market/
-├── experiments/
-├── scripts/
-└── 26_german_credit.ipynb
-```
-
-## 6. Notes
-
-The main implementation is built around `DCEWithConstraints` and `ConstraintManager`. The constraint manager allows multiple constraint penalties to be added to the original DCE objective, while the recovery module provides optional post-processing for stricter feasibility under moment-based constraints.
+### Baselines
