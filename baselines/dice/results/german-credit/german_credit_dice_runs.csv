@@ -1,0 +1,2 @@
+Dataset,Method,seed,Affected count,Successful recourse,Coverage,Favorable rate,SWD,WD,Runtime (s),Mean value,Std value,LSC MSE,FSD violations,Changed count,Invalid changed count,Valid changed rate,Out-of-range count,Non-integer count
+German Credit,DiCE,42,20,20,1.0,1.0,0.12022927334764809,0.11478844530664933,2.0288450000007288,19.886330335178172,3292.904159024515,0.812566746305713,8,20,20,0.0,0,20
