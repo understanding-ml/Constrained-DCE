@@ -100,7 +100,6 @@ can additionally use the recovery module when strict feasibility is required.
 Clone the repository and enter its root directory:
 
 ```bash
-git clone https://github.com/understanding-ml/Constrained-DCE.git
 cd Constrained-DCE
 ```
 
