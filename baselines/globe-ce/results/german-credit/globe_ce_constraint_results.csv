@@ -1,0 +1,5 @@
+Constraint family,Feasibility target,Metric,DCE (paper),GLOBE-CE,CDCE (paper)
+Mean,Duration ≥ 21,Duration mean,18.95,18.541988382224876,20.97
+Standard deviation,Credit amount ≤ 2000,Credit amount std,2155.3,2113.042081692487,2000.6
+Linear structure,Duration = 0.6264 × Credit amount,Structural MSE,0.6555,0.6367055764796562,0.303
+FSD,Duration shifts shorter,FSD violations,54.0,0.0,17.0
