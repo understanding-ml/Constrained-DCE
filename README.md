@@ -1,3 +1,12 @@
+# Constrained Distributional Counterfactual Explanations
+
+This repository contains the implementation and experimental resources for
+**Constrained Distributional Counterfactual Explanations (CDCE)**.
+
+CDCE extends Distributional Counterfactual Explanations (DCE) by incorporating
+explicit feasibility constraints into distribution-level counterfactual
+optimization. The implementation supports four constraint families:
+
 - mean constraints;
 - standard-deviation constraints;
 - linear structural constraints (LSC); and
@@ -157,3 +166,75 @@ families. The analysis notebooks read the saved experimental outputs and
 compute the reported five-run summaries.
 
 ### Baselines
+
+DiCE:
+
+```text
+baselines/dice/german_credit_dice_audit.ipynb
+baselines/dice/multi_dataset_dice_5runs.ipynb
+```
+
+GLOBE-CE:
+
+```text
+baselines/globe-ce/german_credit_globe_ce_audit.ipynb
+baselines/globe-ce/multi_dataset_globe_ce_5runs.ipynb
+```
+
+Saved per-run results and aggregate summaries are available under the
+corresponding `results/` directories. The validation summaries use seeds
+40--44.
+
+## Datasets
+
+The experiments cover four public binary-classification datasets:
+
+| Dataset | Role |
+| --- | --- |
+| German Credit | Detailed institutional case study. |
+| HELOC | Credit-domain validation. |
+| Cardio | Health-domain validation. |
+| Marketing Campaign | Business-domain validation. |
+
+Dataset loading and preprocessing are implemented in the corresponding
+experiment scripts. Review the terms and licenses of the original datasets
+before redistribution or downstream use.
+
+## Constraint configuration
+
+Constraints are passed to `ConstraintManager` as configuration dictionaries.
+A mean upper-bound constraint, for example, has the following form:
+
+```python
+configs = [
+    {
+        "type": "mean",
+        "bounds": {"feature_name": target_value},
+        "lambda": penalty_weight,
+    }
+]
+```
+
+The dataset scripts contain the exact feature choices, bounds, penalty
+weights, optimization settings, and random seeds used for the reported
+experiments.
+
+## Reproducibility notes
+
+- DCE and CDCE use the same processed data, explained population, prediction
+  model, and target output within each dataset.
+- The prediction model is held fixed during counterfactual optimization.
+- The validation experiments report results over five runs with seeds 40--44.
+- Tables in the main paper report five-run means; the complete mean and
+  standard-deviation audit is produced by the analysis notebooks.
+- DiCE and GLOBE-CE results are evaluated with the same constraint metrics and
+  distributional-distance conventions used for DCE and CDCE.
+
+## Responsible use
+
+The supplied constraints represent experimental feasibility assumptions, not
+universal policy recommendations. Appropriate constraints depend on the
+application, affected population, data-generating process, and institutional
+context. CDCE does not automatically guarantee individual-level actionability,
+immutability, causal validity, or fairness; these requirements must be assessed
+separately for any deployment.
